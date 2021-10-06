@@ -1,10 +1,10 @@
 package com.trade;
 
-public class Trade {
-    private String id = "";
-    private String symbol = "";
-    private int quantity = 0;
-    private double price = 0.0;
+public abstract class Trade {
+    private final String id;
+    private final String symbol;
+    private int quantity;
+    private double price;
 
     public Trade(String id, String symbol, int quantity) {
         this.id = id;
@@ -19,21 +19,7 @@ public class Trade {
         setPrice(price);
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getSymbol() {
-        return symbol;
-    }
-
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
-    }
+    public abstract double calcDividend();
 
     public int getQuantity() {
         return quantity;
@@ -43,17 +29,19 @@ public class Trade {
         this.quantity = quantity;
     }
 
-    public double getPrice() {
-        return price;
+    public void setPrice(double price) {
+        if (price < 0) throw new IllegalArgumentException();
+        this.price = price;
     }
 
-    public void setPrice(double price) {
-        this.price = price > 0 ? price : 0;
+    public double getPrice() {
+        return price;
     }
 
     public boolean isPositive(double price) {
         return getPrice() > 0;
     }
+
 
     @Override
     public String toString() {
