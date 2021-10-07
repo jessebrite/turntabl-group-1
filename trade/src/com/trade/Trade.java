@@ -6,6 +6,10 @@ public abstract class Trade {
     private int quantity;
     private double price;
 
+    public Trade(){
+        this("T1", "APPL", 100, 15.25);
+    }
+
     public Trade(String id, String symbol, int quantity) {
         this.id = id;
         this.symbol = symbol;
