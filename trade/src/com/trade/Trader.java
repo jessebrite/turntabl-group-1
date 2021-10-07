@@ -9,11 +9,10 @@ public class Trader {
         this.account = account;
     }
 
-    public double addTrade(double price, int quantity){
+    public double addTrade(Account account, double price, double quantity){
         double value = price * quantity;
         value += account.getTotalValue();
         account.setTotalValue(value);
-
         return account.getTotalValue();
     }
 
