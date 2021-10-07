@@ -20,7 +20,7 @@ public abstract class Trade {
         this.id = id;
         this.symbol = symbol;
         this.quantity = quantity;
-        setPrice(price);
+        this.price = price;
     }
 
     public abstract double calcDividend();

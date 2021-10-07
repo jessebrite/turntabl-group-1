@@ -1,6 +1,7 @@
 package com.trade;
 
 public class Fund extends Trade {
+
     public Fund(String id, String symbol, int quantity) {
         super(id, symbol, quantity);
     }
