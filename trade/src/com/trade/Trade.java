@@ -1,10 +1,9 @@
 package com.trade;
 
 public class Trade {
-    private String id = "";
-    private String symbol = "";
-    private int quantity = 0;
-    private double price = 0.0;
+    private String id,symbol;
+    private int quantity;
+    private double price;
 
     public Trade(String id, String symbol, int quantity) {
         this.id = id;
